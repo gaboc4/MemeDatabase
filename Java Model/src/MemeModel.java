@@ -5,7 +5,6 @@ import clarifai2.dto.model.ConceptModel;
 import clarifai2.dto.model.output_info.ConceptOutputInfo;
 import clarifai2.dto.prediction.Concept;
 
-
 /**
  * Created by trentololz on 10/1/16.
  */
@@ -33,7 +32,7 @@ public class MemeModel  {
             .plus(
                     ClarifaiInput.forImage(ClarifaiImage.of("https://samples.clarifai.com/puppy.jpeg"))
                             .withConcepts(
-                                    Concept.forID("boscoe")
+                                    Concept.forID("boscoe").withValue(true)
                             ),
                     ClarifaiInput.forImage(ClarifaiImage.of("https://samples.clarifai.com/wedding.jpg"))
                             .withConcepts(
