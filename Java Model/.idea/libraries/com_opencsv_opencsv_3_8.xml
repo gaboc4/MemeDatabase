@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.opencsv:opencsv:3.8" type="repository">
+    <properties maven-id="com.opencsv:opencsv:3.8" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/opencsv/opencsv/3.8/opencsv-3.8.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
