@@ -1,3 +1,19 @@
 @import 'jeet/index';
 
-@include edit();
+.headline {
+    font-size: 3.25rem;
+  }
+
+.white {
+      color: #fff;
+  }
+
+.hero {
+  padding: 12px 0 90px 0;
+  background: #48cfad;
+  z-index: 10;
+}
+
+.text-center {
+    text-align: center;
+}
