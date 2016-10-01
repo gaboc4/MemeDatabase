@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jooq.iml" filepath="$PROJECT_DIR$/jooq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-codegen.iml" filepath="$PROJECT_DIR$/jooq-codegen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-codegen-maven.iml" filepath="$PROJECT_DIR$/jooq-codegen-maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-meta.iml" filepath="$PROJECT_DIR$/jooq-meta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-meta-extensions.iml" filepath="$PROJECT_DIR$/jooq-meta-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-parent.iml" filepath="$PROJECT_DIR$/jooq-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq-scala.iml" filepath="$PROJECT_DIR$/jooq-scala.iml" />
+    </modules>
+  </component>
+</project>
