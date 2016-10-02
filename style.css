@@ -132,10 +132,13 @@
  * Apply a clearfix to an element.
  */
 .headline {
-  font-size: 3.25rem; }
+  font-size: 3.75rem; }
 
 .white {
   color: #fff; }
+
+.grey {
+  color: #555E69; }
 
 .hero {
   padding: 12px 0 90px 0;
@@ -145,7 +148,88 @@
 .text-center {
   text-align: center; }
 
+section2 {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin-left: 25%;
+  padding-top: .35%; }
+  section2:before, section2:after {
+    content: '';
+    display: table; }
+  section2:after {
+    clear: both; }
+  section2:last-child {
+    margin-right: 0%; }
+
+article2 {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  width: 100%;
+  font-size: 1.75rem; }
+  article2:before, article2:after {
+    content: '';
+    display: table; }
+  article2:after {
+    clear: both; }
+  article2:last-child {
+    margin-right: 0%; }
+
+section {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+  float: left;
+  width: 22.75%; }
+  section:before, section:after {
+    content: '';
+    display: table; }
+  section:after {
+    clear: both; }
+  section:last-child {
+    margin-right: 0%; }
+
+article {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+  width: 100%;
+  font-size: 1.75rem; }
+  article:before, article:after {
+    content: '';
+    display: table; }
+  article:after {
+    clear: both; }
+  article:last-child {
+    margin-right: 0%; }
+
 .h1 {
   font-family: 'Helvetica W02 Roman', "Helvetica Neue", Helvetica, Arial, sans-serif, arial, sans-serif; }
+
+.about {
+  background: #FEC0B5;
+  font-size: 2.00rem; }
+
+.for-picture {
+  margin-left: 37%;
+  height: 500px;
+  width: 30%; }
 
 /*# sourceMappingURL=style.css.map */
