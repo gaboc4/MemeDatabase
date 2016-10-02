@@ -25,8 +25,9 @@ function showUser(array) {
     var rank1 = 0;
     var rank2 = 3;
     var rank3 = 5;
-    var rank4 = 8;
+    var rank4 = 7;
     var rank5 = 10;
+    var rank6 = 12;
 
     var max = 84937 * 5;
     var result = 0;
@@ -64,20 +65,23 @@ function showUser(array) {
                     result = responseText / max * 100;
                     console.log(result);
 
-                     if (result > rank5) {
-                         swal({title: "Amazing!", text: "5/7 meme! ", html: true});
+                     if (result > rank6) {
+                         swal({title: "Amazing!", text: "5/7 Major League Meme ", html: true});
+                     }
+                     else if (result > rank5) {
+                         swal({title: "Wow!", text: "4/7 Trendy Meme " , html: true});
                      }
                      else if (result > rank4) {
-                         swal({title: "Wow!", text: "4/7 meme! " , html: true});
+                         swal({title: "Okay...", text: "3/7 Entry Level Meme " , html: true});
                      }
                      else if (result > rank3) {
-                         swal({title: "Okay...", text: "3/7 meme! " , html: true});
+                         swal({title: "Come on...", text: "2/7 Forwards from Grandma Level" , html: true});
                      }
                      else if (result > rank2) {
-                         swal({title: "Come on!", text: "2/7 meme!" , html: true});
+                         swal({title: "Lameee", text: "1/7 NineGag Level Meme ", html: true});
                      }
                      else if (result > rank1) {
-                         swal({title: "Lame!", text: "1/7 meme! ", html: true});
+                         swal({title: "Lameee", text: "0/7 Hot Garbage Meme ", html: true});
                      }
 
 
