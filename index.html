@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 
     <script>
     //   var app = new Clarifai.App(
     //     'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
     //     'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
     //   );
+
     Clarifai.initialize({
         'clientId': 'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
         'clientSecret': 'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
     });
-
     </script>
 
     <script src="scripts.js"></script>
@@ -31,9 +33,11 @@
   <h1 class="headline white">Welcome, Let's Rank Your Meme</h1>
 
 <input type="text" id="url"><br>
-<button id="analyzeButton" onclick="analyze()" style="">Analyze</button>
+<button id="analyzeButton" style="">Analyze</button>
 
-<p id="raghav"></p>
+<div id="txtHint"><b>Person info will be listed here...</b></div>
+
+<p id="raghav" style="visibility:hidden">FUCK YES</p>
 
 </div>
 
