@@ -25,8 +25,13 @@
       <file leaf-file-name="MemeModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MemeModel.java">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="242">
               <caret line="154" column="135" selection-start-line="154" selection-start-column="135" selection-end-line="154" selection-end-column="135" />
+
+            <state relative-caret-position="465">
+              <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
+
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1475397543000" expanded="true" signature="2484:2616" ph="INSERT INTO images... " />
@@ -147,8 +152,15 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="width" value="1280" />
     <option name="height" value="800" />
+=======
+    <option name="x" value="279" />
+    <option name="y" value="23" />
+    <option name="width" value="1390" />
+    <option name="height" value="1121" />
+>>>>>>> 326114d585d93d1154f0199331ef25cb16e1a7cc
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -787,17 +799,28 @@
       <workItem from="1475336421659" duration="4789000" />
       <workItem from="1475343704145" duration="1925000" />
       <workItem from="1475336421659" duration="9994000" />
+<<<<<<< HEAD
       <workItem from="1475357585047" duration="5135000" />
       <workItem from="1475383729398" duration="2459000" />
       <workItem from="1475389124515" duration="7306000" />
+=======
+      <workItem from="1475357585047" duration="7386000" />
+>>>>>>> 326114d585d93d1154f0199331ef25cb16e1a7cc
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="17380000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="279" y="23" width="1390" height="1121" extended-state="0" />
+>>>>>>> 326114d585d93d1154f0199331ef25cb16e1a7cc
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -809,10 +832,17 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3178082" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18323442" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 326114d585d93d1154f0199331ef25cb16e1a7cc
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1092,8 +1122,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MemeModel.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="242">
           <caret line="154" column="135" selection-start-line="154" selection-start-column="135" selection-end-line="154" selection-end-column="135" />
+=======
+        <state relative-caret-position="465">
+          <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
+>>>>>>> 326114d585d93d1154f0199331ef25cb16e1a7cc
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1475397543000" expanded="true" signature="2484:2616" ph="INSERT INTO images... " />
