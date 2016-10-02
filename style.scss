@@ -1,5 +1,49 @@
 @import 'jeet/index';
 
+.meme_input {
+  padding-top: 2%;
+  font-size: 1.75rem;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #21B291;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 .headline {
     font-size: 3.75rem;
   }
@@ -9,7 +53,11 @@
   }
 
 .grey {
-  color: #555E69;
+  color: #5E5E5E;
+}
+
+.grey2 {
+  color: #DFDEDE;
 }
 
 .hero {
@@ -51,8 +99,9 @@ article {
 }
 
 .about {
-  background: #FEC0B5;
+  background: #FEDBD5;
   font-size: 2.00rem;
+
 }
 
 .for-picture {
