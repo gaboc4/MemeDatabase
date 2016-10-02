@@ -14,6 +14,8 @@ if (!$con) {
 
 mysqli_select_db($con,"images");
 
+$counter = 0;
+
 
  foreach($data as $d) {
     $sql="SELECT SUM(upvoteCount) FROM memes WHERE tag1 = '".$d."' OR tag2 = '".$d."' OR tag3 = '".$d."' OR tag4 = '".$d."' OR tag5 = '".$d."'";
@@ -24,7 +26,11 @@ mysqli_select_db($con,"images");
 
      $dankness = intval($row['SUM(upvoteCount)']) + $dankness;
 
-    echo $d;
+     $counter += 1;
+
+
+
+    // echo $d;
    }
 
     echo $dankness;
@@ -32,4 +38,6 @@ mysqli_select_db($con,"images");
 
 
 mysqli_close($con);
+
+
 ?>

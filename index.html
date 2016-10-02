@@ -7,9 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="
+https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+    <style type="text/css" id="mti_fontface_9f115ec9-04c6-49ed-bf53-7dc9921e4184">@font-face{
+          font-family:"Helvetica W02 Roman";
+          src:url("http://fast.fonts.net/dv2/3/b56b944e-bbe0-4450-a241-de2125d3e682.woff?d44f19a684109620e4841578a690e818bbcc2314dffd09826b89cd425f574a0cbe9fc2a6bc67d3bcc0e3cd0ae27df503557cfc70aa3c604a5f34010d37a0ddefe0782a2a485fd820000cbc8654bd1663f3683dfdaa8c57ea93927b89cb2f3ea623e9382d8745124b77ce82a2552a12&projectId=9f115ec9-04c6-49ed-bf53-7dc9921e4184") format('woff');}
+          @font-face{
+            font-family:"Helvetica W01 Bold";
+            src:url("http://fast.fonts.net/dv2/3/c5749443-93da-4592-b794-42f28d62ef72.woff?d44f19a684109620e4841578a690e818bbcc2314dffd09826b89cd425f574a0cbe9fc2a6bc67d3bcc0e3cd0ae27df503557cfc70aa3c604a5f34010d37a0ddefe0782a2a485fd820000cbc8654bd1663f3683dfdaa8c57ea93927b89cb2f3ea623e9382d8745124b77ce82a2552a12&projectId=9f115ec9-04c6-49ed-bf53-7dc9921e4184") format('woff');}
+    </style>
+
+    <script src="scripts.js"></script>
+
     <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
 
     <script>
     //   var app = new Clarifai.App(
@@ -23,7 +35,6 @@
     });
     </script>
 
-    <script src="scripts.js"></script>
 
     <title>RankYourMemes</title>
 </head>
@@ -31,15 +42,40 @@
 <body>
 <div class="hero text-center">
   <h1 class="headline white">Welcome, Let's Rank Your Meme</h1>
-
-<input type="text" id="url"><br>
-<button id="analyzeButton" style="">Analyze</button>
-
-<div id="txtHint"><b>Person info will be listed here...</b></div>
-
-<p id="raghav" style="visibility:hidden">FUCK YES</p>
-
 </div>
+
+<div class="text-center meme_input">
+  Feed me your memes:<br>
+<input type="text" name="Feedmeyourmemes" id="url"><br>
+<button class="button" style="vertical-align:middle" id="analyzeButton"><span>Thanks </span></button>
+</div>
+
+
+<section2>
+  <h1 class="white about text-center">About</h1>
+  <article2>
+    <p class="grey"> Welcome to MemeRank, where dreams become memes, or something like that.
+    Created by 4 Northeatern Second Year CS students during the Fall Hackathon Husky Hacks
+    to commemorate their true memer friend Ethan March. Memes uploaded here are ranked
+    based on a scale created by Ethan (see image below) and is the end all be all of meme
+    rankings.</p>
+  </article2>
+</section2>
+
+<section>
+  <h1 class="white about text-center">How it Works</h1>
+  <article>
+    <p class="grey"> We use the Clarifai API to recognize uplaoded images and based on tags
+    that Clarifai recognizes, returns a rating. The site is hosted on a DigitalOcean
+  droplet with a LAMP stack and Jeet as the framework for this amazing site.</p>
+  </article>
+</section>
+
+
+
+<img class="for-picture"src="meme_rank.jpg">
+
+<p id ="dontlookhere"></p>
 
 </body>
 

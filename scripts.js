@@ -21,6 +21,14 @@ function handleError(err) {
     console.log('promise error:', err);
 };
 function showUser(array) {
+
+    var rank1 = 100;
+    var rank2 = 250;
+    var rank3 = 600;
+    var rank4 = 1000;
+    var rank5 = 3000;
+
+
     if (document.getElementById("url").value == "") {
         document.getElementById("txtHint").innerHTML = "";
         return;
@@ -49,11 +57,17 @@ function showUser(array) {
                 cache: false,
 
                 success: function(responseText){
-                    console.log(responseText);
 
-                    if (responseText  == 0) {
-                        document.getElementById("raghav").style.visibility = "visible";
-                    }
+                     if (responseText > rank5) {
+                         swal({title: "Wow!", text: "5/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                     }
+                     else if (responseText > rank4) {
+                         swal({title: "Wow!", text: "4/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                     }
+                     else if (responseText > rank3) {
+                         swal({title: "Wow!", text: "3/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                     }
+
 
                 },
 
