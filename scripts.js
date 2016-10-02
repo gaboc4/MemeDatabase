@@ -13,7 +13,7 @@ function analyze() {
 }
 function handleResponse(response) {
     console.log('promise response:', response.results[0].result.tag.classes);
-    showUser(response.results[0].result.tag.classes.slice(0,5));
+    showUser(response.results[0].result.tag.classes.slice(0,4));
 
 };
 
@@ -22,11 +22,14 @@ function handleError(err) {
 };
 function showUser(array) {
 
-    var rank1 = 100;
-    var rank2 = 250;
-    var rank3 = 600;
-    var rank4 = 1000;
-    var rank5 = 3000;
+    var rank1 = 0;
+    var rank2 = 3;
+    var rank3 = 5;
+    var rank4 = 8;
+    var rank5 = 10;
+
+    var max = 84937 * 5;
+    var result = 0;
 
 
     if (document.getElementById("url").value == "") {
@@ -58,14 +61,23 @@ function showUser(array) {
 
                 success: function(responseText){
 
-                     if (responseText > rank5) {
-                         swal({title: "Wow!", text: "5/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                    result = responseText / max * 100;
+                    console.log(result);
+
+                     if (result > rank5) {
+                         swal({title: "Amazing!", text: "5/7 meme! ", html: true});
                      }
-                     else if (responseText > rank4) {
-                         swal({title: "Wow!", text: "4/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                     else if (result > rank4) {
+                         swal({title: "Wow!", text: "4/7 meme! " , html: true});
                      }
-                     else if (responseText > rank3) {
-                         swal({title: "Wow!", text: "3/7 meme! <br> Your dankess rating is:  " + responseText, html: true});
+                     else if (result > rank3) {
+                         swal({title: "Okay...", text: "3/7 meme! " , html: true});
+                     }
+                     else if (result > rank2) {
+                         swal({title: "Come on!", text: "2/7 meme!" , html: true});
+                     }
+                     else if (result > rank1) {
+                         swal({title: "Lame!", text: "1/7 meme! ", html: true});
                      }
 
 
