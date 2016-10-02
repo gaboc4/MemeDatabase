@@ -83,6 +83,9 @@ function showUser(array) {
                      else if (result > rank1) {
                          swal({title: "Lameee", text: "0/7 Hot Garbage Meme ", html: true});
                      }
+                     else if (result == rank1) {
+                         swal({title: "Lameee", text: "0/7 Hot Garbage Meme ", html: true});
+                     }
 
 
                 },
