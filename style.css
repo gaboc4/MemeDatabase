@@ -222,7 +222,7 @@ article2 {
   margin-left: 0%;
   margin-right: 3%;
   width: 100%;
-  font-size: 1.75rem; }
+  font-size: 1.3rem; }
   article2:before, article2:after {
     content: '';
     display: table; }
@@ -258,7 +258,7 @@ article {
   margin-left: 0%;
   margin-right: 3%;
   width: 100%;
-  font-size: 1.75rem; }
+  font-size: 1.3rem; }
   article:before, article:after {
     content: '';
     display: table; }
@@ -272,7 +272,7 @@ article {
 
 .about {
   background: #FEDBD5;
-  font-size: 2.00rem; }
+  font-size: 2rem; }
 
 .for-picture {
   margin-left: 37%;

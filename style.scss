@@ -85,7 +85,7 @@ section2 {
 article2 {
   @include col(1/4);
   width: 100%;
-  font-size: 1.75rem;
+  font-size: 1.3rem;
 }
 
 section {
@@ -97,7 +97,7 @@ section {
 article {
   @include col(3/4);
   width: 100%;
-  font-size: 1.75rem;
+  font-size: 1.3rem;
 }
 
 .h1 {
@@ -106,7 +106,7 @@ article {
 
 .about {
   background: #FEDBD5;
-  font-size: 2.00rem;
+  font-size: 2rem;
 
 }
 
