@@ -1,97 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>RankMyMeme</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+  <script src="scripts.js"></script>
 
 
-    <script src="
-https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-    <style type="text/css" id="mti_fontface_9f115ec9-04c6-49ed-bf53-7dc9921e4184">@font-face{
-          font-family:"Helvetica W02 Roman";
-          src:url("http://fast.fonts.net/dv2/3/b56b944e-bbe0-4450-a241-de2125d3e682.woff?d44f19a684109620e4841578a690e818bbcc2314dffd09826b89cd425f574a0cbe9fc2a6bc67d3bcc0e3cd0ae27df503557cfc70aa3c604a5f34010d37a0ddefe0782a2a485fd820000cbc8654bd1663f3683dfdaa8c57ea93927b89cb2f3ea623e9382d8745124b77ce82a2552a12&projectId=9f115ec9-04c6-49ed-bf53-7dc9921e4184") format('woff');}
-          @font-face{
-            font-family:"Helvetica W01 Bold";
-            src:url("http://fast.fonts.net/dv2/3/c5749443-93da-4592-b794-42f28d62ef72.woff?d44f19a684109620e4841578a690e818bbcc2314dffd09826b89cd425f574a0cbe9fc2a6bc67d3bcc0e3cd0ae27df503557cfc70aa3c604a5f34010d37a0ddefe0782a2a485fd820000cbc8654bd1663f3683dfdaa8c57ea93927b89cb2f3ea623e9382d8745124b77ce82a2552a12&projectId=9f115ec9-04c6-49ed-bf53-7dc9921e4184") format('woff');}
-    </style>
+  <script>
+  //   var app = new Clarifai.App(
+  //     'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
+  //     'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
+  //   );
 
-    <script src="scripts.js"></script>
-
-
-    <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-    <script>
-    //   var app = new Clarifai.App(
-    //     'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
-    //     'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
-    //   );
-
-    Clarifai.initialize({
-        'clientId': 'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
-        'clientSecret': 'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
-    });
-    </script>
+  Clarifai.initialize({
+      'clientId': 'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
+      'clientSecret': 'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
+  });
+  </script>
 
 <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 
-    <title>RankYourMemes</title>
 </head>
 
 <body>
-<div class="hero text-center">
-  <h1 class="headline white">Welcome, Let's Rank Your Meme</h1>
-</div>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">MemeRank</a>
+      <ul class="right hide-on-med-and-down"> </ul>
+      <!--  <li><a href="#">Navbar Link</a></li> -->
 
-<div class="text-center meme_input">
-  Feed me your memes <br>
-  <div class="text-center meme_input2">
-    (please enter a url with an image ending, like this: https://i.ytimg.com/vi/XcSvgH7PH0E/maxresdefault.jpg):<br>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Welcome, Let's Rank Your Meme</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Feed me your memes:</h5>
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="please enter a url with an image ending, like this: https://i.ytimg.com/vi/XcSvgH7PH0E/maxresdefault.jpg):" id="url" type="text" class="validate">
+        </div>
+      <div class="row center">
+        <a type="submit" onclick="analyze()" id="analyzeButton" class="btn-large waves-effect waves-light orange">Thanks</a>
+      </div>
+      <br><br>
+
+    </div>
   </div>
 
-<input type="text" name="Feedmeyourmemes" id="url"><br>
-<button class="button" style="vertical-align:middle" id="analyzeButton"><span>Thanks </span></button>
-</div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">About</h5>
+
+            <p class="light"> Welcome to MemeRank, where dreams become memes, or something like that.
+              Created by 4 Northeatern Second Year CS students during the Fall Hackathon Husky Hacks
+              to commemorate their true memer friend Ethan March. Memes uploaded here are ranked
+              based on a scale created by Ethan March, who the website it dedicated to,
+              and the 5/7 top rank is a meme in itself. <a href="http://knowyourmeme.com/memes/5-7">(Link for those of you who still need to be educated)</a>
+              An actual use of this would be to check and see if your meme is worthy before
+              you post it so your friends think you are actually funny.
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">How it Works</h5>
+
+            <p class="light">First, we scrape data from subreddits like /r/me_irl and we store the URL and the upvote count.
+                From there we use a script written in Java to pass the images through the Clarifai API which returns the top
+                5 tags that are associated with that image (i.e. for a red truck it'll be 'red', 'car', 'big', etc).
+                As each image has its tags generated, using the same Java code, we pass save all of the previous
+                attributes to a MySQL database. When a user inputs an image to the site, it is run through the API using a PHP script and
+                its tags are then checked with the tags of other images in the database. For each tag that the image has in
+                common with other images in the database, we sum the upvote count of the matched image. We then do some more math magic
+                to rank the images based on our scale, but this description is already long enough. The site is hosted on a DigitalOcean
+                droplet with a LAMP stack and uses Jeet as the framework for this amazing site.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">thumb_up</i></h2>
+            <h5 class="center">Let us know what you think</h5>
+
+            <p class="light">Click here to go to GitHub and view the project. If you want to send us a comment, you can send an email to { _____     }</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
-<section2>
-  <h1 class="white about text-center">About</h1>
-  <article2>
-    <p class="grey"> Welcome to MemeRank, where dreams become memes, or something like that.
-    Created by 4 Northeatern Second Year CS students during the Fall Hackathon Husky Hacks
-    to commemorate their true memer friend Ethan March. Memes uploaded here are ranked
-    based on a scale created by Ethan (see image below) and is the end all be all of meme
-    rankings. An actual use of this would be to check and see if your meme is funny before
-  you post it so your friends think you are actually funny.</p>
-  </article2>
-</section2>
+    <div class="section">
 
-<section>
-  <h1 class="white about text-center">How it Works</h1>
-  <article>
-    <p class="grey"> First, we scrape data from subreddits like /r/me_irl and we store the URL and the upvote count.
-      From there we use a script written in Java to pass the images through the Clarifai API which returns the top
-      5 tags that are associated with that image (i.e. for a red truck it'll be 'red', 'car', 'big', etc).
-      As each image has its tags generated, using the same Java code, we pass save all of the previous
-      attributes to a MySQL database. When a user inputs an image to the site, it is run through the API using a PHP script and
-      its tags are then checked with the tags of other images in the database. For each tag that the image has in
-      common with other images in the database, we sum the upvote count of the matched image. We then do some more math magic
-      to rank the images based on our scale, but this description is already long enough. The site is hosted on a DigitalOcean
-      droplet with a LAMP stack and uses Jeet as the framework for this amazing site.</p>
-  </article>
-</section>
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Thanks For Using RankMyMeme!</h5>
+          <p class="grey-text text-lighten-4">Tell your fellow memers about us to help cultivate good memes on the interwebs.</p>
+
+<!--
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  -->
+    <div class="footer-copyright">
+      <div class="container">
+      Copyright: Don't steal our idea please, it's just a meme bro
+      </div>
+    </div>
+  </footer>
 
 
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <p id ="dontlookhere"></p>
 
-<img class="for-picture"src="http://i.imgur.com/5pwyeaH.jpg">
-
-
-<p id ="dontlookhere"></p>
-
-</body>
-
+  </body>
 </html>
