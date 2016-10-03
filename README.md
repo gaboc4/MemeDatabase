@@ -5,5 +5,5 @@ A HuskyHacks hackathon project by Northeastern CS students: Gabriel Centeno, Jos
 
 About: 
 	 Create site that ranks memes based on scale created by Ethan March using machine learning and an image recognition software 	API. 
-	 
-	 GO TO THE SITE: <http://104.236.62.179/>
+
+Go to the site: <http://104.236.62.179/>
