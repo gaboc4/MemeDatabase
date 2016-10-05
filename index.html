@@ -10,7 +10,8 @@
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
   <script src="scripts.js"></script>
 
@@ -36,7 +37,7 @@
 
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">MemeRate</a>
+    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">RateAMeme</a>
       <ul class="right hide-on-med-and-down"> </ul>
       <!--  <li><a href="#">Navbar Link</a></li> -->
 
@@ -54,10 +55,10 @@
         <h5 class="header col s12 light">Feed me your memes:</h5>
       </div>
         <div class="input-field col s6">
-          <input placeholder="please enter a url with an image ending, like this: https://i.ytimg.com/vi/XcSvgH7PH0E/maxresdefault.jpg):" id="url" type="text" class="validate">
+          <input placeholder="enter a direct image url like: http://f.tqn.com/y/netforbeginners/1/W/t/c/leo2.PNG" id="url" type="text" class="validate">
         </div>
       <div class="row center">
-        <a type="submit" onclick="analyze()" id="analyzeButton" class="btn-large waves-effect waves-light orange">Thanks</a>
+        <a type="submit" onclick="analyze()" id="analyzeButton" class="btn-large waves-effect waves-light orange">Go!</a>
       </div>
       <br><br>
 
@@ -78,7 +79,7 @@
             <p class="light"> Welcome to MemeRank, where dreams become memes, or something like that.
               Created by 4 Northeatern Second Year CS students during the Fall Hackathon Husky Hacks
               to commemorate their true memer friend Ethan March. Memes uploaded here are ranked
-              based on a scale created by Ethan March, who the website it dedicated to,
+              based on a scale created by Ethan March, who the website is dedicated to,
               and the 5/7 top rank is a meme in itself. <a href="http://knowyourmeme.com/memes/5-7">(Link for those of you who still need to be educated)</a>
               An actual use of this would be to check and see if your meme is worthy before
               you post it so your friends think you are actually funny.
@@ -91,15 +92,14 @@
             <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">How it Works</h5>
 
-            <p class="light">First, we scrape data from subreddits like /r/me_irl and we store the URL and the upvote count.
-                From there we use a script written in Java to pass the images through the Clarifai API which returns the top
-                5 tags that are associated with that image (i.e. for a red truck it'll be 'red', 'car', 'big', etc).
-                As each image has its tags generated, using the same Java code, we pass save all of the previous
-                attributes to a MySQL database. When a user inputs an image to the site, it is run through the API using a PHP script and
-                its tags are then checked with the tags of other images in the database. For each tag that the image has in
-                common with other images in the database, we sum the upvote count of the matched image. We then do some more math magic
-                to rank the images based on our scale, but this description is already long enough. The site is hosted on a DigitalOcean
-                droplet with a LAMP stack and uses Jeet as the framework for this amazing site.</p>
+            <p class="light">First, we scrape data from sites like Reddit using a Python script, and we store the
+              URL and the upvote count in a CSV for later use. From there we use a model written in Java to pass the images through an API
+              called Clarifai, which returns the top 5 tags that are associated with that image (i.e. for a red truck it’ll be ‘red’, ‘car’, ‘big’, etc).
+              As each image has its tags generated, using the same Java code, we save all of the previous attributes to the database. When a user inputs a
+              direct image URL to the site, it is run through the API using a PHP script and its tags are then checked with the tags of other images in the database.
+              For each tag that the image has in common with other images in the database, we sum the upvote count of the matched image. We then do some more math magic to
+              rank the images based on our scale, but this description is already long enough.
+            The site itself uses the Materilaize framework, based off of Google's material design principles, and JavaScript to display the PHP content.</p>
           </div>
         </div>
 
@@ -108,7 +108,8 @@
             <h2 class="center light-blue-text"><i class="material-icons">thumb_up</i></h2>
             <h5 class="center">Let us know what you think</h5>
 
-            <p class="light">Click here to go to GitHub and view the project. If you want to send us a comment, you can send an email to { _____     }</p>
+            <p class="light">Click <a href="https://github.com/gaboc4/MemeDatabase/" target="_blank">here</a> to go to GitHub and view the project.
+              If you want to send us a comment, you can send an email to { email coming soooooon}</p>
           </div>
         </div>
       </div>
@@ -125,7 +126,7 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Thanks For Using RankMyMeme!</h5>
+          <h5 class="white-text">Thanks For Using RateAMeme!</h5>
           <p class="grey-text text-lighten-4">Tell your fellow memers about us to help cultivate good memes on the interwebs.</p>
 
 <!--
