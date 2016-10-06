@@ -29,7 +29,7 @@ function showUser(array) {
     var rank5 = 10;
     var rank6 = 12;
 
-    var max = 84937 * 5;
+    var max = 120000 * 5;
     var result = 0;
 
 
