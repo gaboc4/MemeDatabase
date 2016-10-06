@@ -1,32 +1,180 @@
-<?php
-$data = json_decode(stripslashes($_POST['data']));
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-$dankness = 0;
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-echo 'executed' . PHP_EOL;
+  ga('create', 'UA-85284344-1', 'auto');
+  ga('send', 'pageview');
 
-$con = mysqli_connect('104.236.77.117','josh','joshy','images', 3306);
+</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>RateAMeme</title>
 
-//2d214d83d51c0c7a5e220616bb0b10b4ab0afdf49d70cad0
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-mysqli_select_db($con,"images");
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
-
-// foreach($data as $d) {
-    $sql="SELECT SUM(upVotedCount WHERE tag1 = 'red' OR tag2 = 'red' OR tag3 = 'red' OR tag4 = 'red' OR tag5 = 'red') FROM memes";
-    echo 'asdfasdf';
-    echo $sql;
-    $dankness = mysqli_query($con,$sql) + $dankness;
-
-    //echo $d;
-  // }
-
-
-    echo $dankness;
+  <script src="scripts.js"></script>
 
 
-mysqli_close($con);
-?>
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <script>
+  //   var app = new Clarifai.App(
+  //     'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
+  //     'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
+  //   );
+
+  Clarifai.initialize({
+      'clientId': 'iesLaQ_a8u06p9b_eFbFeSQ-UEeDUOsUgM61Sc5q',
+      'clientSecret': 'DSNw3jZxUe983RI3opNak04Fmnh_quziAsE6ZAuM'
+  });
+  </script>
+
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo">RateAMeme</a>
+      <ul class="right hide-on-med-and-down"> </ul>
+      <!--  <li><a href="#">Navbar Link</a></li> -->
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Welcome, Let's Rate Your Meme</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Feed me your memes:</h5>
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="enter a direct image url like: http://f.tqn.com/y/netforbeginners/1/W/t/c/leo2.PNG" id="url" type="text" class="validate">
+        </div>
+      <div class="row center">
+        <a type="submit" onclick="analyze()" id="analyzeButton" class="btn-large waves-effect waves-light orange">Go!</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">About</h5>
+
+            <p class="light"> Welcome to MemeRank, where dreams become memes, or something like that.
+              Created by 4 Northeatern Second Year CS students during the Fall Hackathon Husky Hacks
+              to commemorate their true memer friend Ethan March. Memes uploaded here are ranked
+              based on a scale created by Ethan March, who the website is dedicated to,
+              and the 5/7 top rank is a meme in itself. <a href="http://knowyourmeme.com/memes/5-7">(Link for those of you who still need to be educated)</a>
+              An actual use of this would be to check and see if your meme is worthy before
+              you post it so your friends think you are actually funny.
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">How it Works</h5>
+
+            <p class="light">First, we scrape data from sites like Reddit using a Python script, and we store the
+              URL and the upvote count in a CSV for later use. From there we use a model written in Java to pass the images through an API
+              called Clarifai, which returns the top 5 tags that are associated with that image (i.e. for a red truck it’ll be ‘red’, ‘car’, ‘big’, etc).
+              As each image has its tags generated, using the same Java code, we save all of the previous attributes to the database. When a user inputs a
+              direct image URL to the site, it is run through the API using a PHP script and its tags are then checked with the tags of other images in the database.
+              For each tag that the image has in common with other images in the database, we sum the upvote count of the matched image. We then do some more math magic to
+              rank the images based on our scale, but this description is already long enough.
+            The site itself uses the Materilaize framework, based off of Google's material design principles, and JavaScript to display the PHP content.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">thumb_up</i></h2>
+            <h5 class="center">Let us know what you think</h5>
+
+            <p class="light">Click <a href="https://github.com/gaboc4/MemeDatabase/" target="_blank">here</a> to go to GitHub and view the project.
+              If you want to send us a comment, you can send an email to { email coming soooooon}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Thanks For Using RateAMeme!</h5>
+          <p class="grey-text text-lighten-4">Tell your fellow memers about us to help cultivate good memes on the interwebs.</p>
+
+<!--
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  -->
+    <div class="footer-copyright">
+      <div class="container">
+      Copyright: Don't steal our idea please, it's just a meme bro
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <p id ="dontlookhere"></p>
+
+  </body>
+</html>
