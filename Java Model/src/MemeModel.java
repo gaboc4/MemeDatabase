@@ -16,7 +16,7 @@ import java.util.List;
 
 
 /**
- * Created by trentololz on 10/1/16.
+ * Created by trentololz and gaboc4 on 10/1/16.
  */
 
 public class MemeModel  {
